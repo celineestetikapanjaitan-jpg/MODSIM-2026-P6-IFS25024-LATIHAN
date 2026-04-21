@@ -293,7 +293,7 @@ with tab3:
 | Face Validation | ✅ Selisih {selisih_pct:.1f}% dari teoritis |
 | Behavior Validation | ✅ Monoton meningkat |
 | Sensitivity Analysis | ✅ Sensitif terhadap parameter |
-| Utilisasi server | ✅ 100% (single server) |
+| Utilisasi server | ✅ {utilisasi:.2f}% |
 
 **Kesimpulan:** Model telah **TERVERIFIKASI** dan **TERVALIDASI**. Hasil simulasi realistis dan konsisten dengan kondisi nyata.
     """)
