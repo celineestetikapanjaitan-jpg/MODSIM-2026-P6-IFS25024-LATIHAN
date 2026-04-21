@@ -46,7 +46,7 @@ def simulasi_pembagian_lembar_jawaban(N, durasi_min=1.0, durasi_max=3.0, seed=No
         waktu_mulai = waktu_selesai_sebelumnya
         durasi = round(random.uniform(durasi_min, durasi_max), 4)
         waktu_selesai = waktu_mulai + durasi
-        waktu_tunggu = waktu_mulai
+        waktu_tunggu = waktu_mulai - 0
         hasil.append({
             'Mahasiswa': i,
             'Waktu Mulai (menit)': round(waktu_mulai, 4),
@@ -130,7 +130,8 @@ col1.metric("⏱ Total Waktu",       f"{total_waktu:.2f} menit")
 col2.metric("📐 Teoritis",          f"{teoritis:.2f} menit")
 col3.metric("⌛ Rata-rata Tunggu",  f"{rata_tunggu:.2f} menit")
 col4.metric("🔄 Rata-rata Durasi",  f"{rata_durasi:.4f} menit")
-col5.metric("🖥 Utilisasi Server",  "100%")
+utilisasi = df['Durasi Pelayanan (menit)'].sum() / total_waktu * 100
+col5.metric("🖥 Utilisasi Server", f"{utilisasi:.2f}%")
 st.markdown("---")
 
 tab1, tab2, tab3, tab4 = st.tabs([
